@@ -1,18 +1,17 @@
 import mongoose from "mongoose";
 
- 
-const ConversationSchema = new mongoose.Schema({
+const CoversationSchema =    new mongoose.Schema({
     members:{
-        type:Array
+type:Array
     },
-    message:{
-        type:String
-    }},
-    {
+  message:{
+    type:String
+  }},
+  {
 timestamps:true
-    }
-);
+  }
+  );
 
-const conversation=mongoose.model('Conversation',ConversationSchema);
+  const conversation=mongoose.model('Conversation', CoversationSchema);
 
-export default conversation;
+   export default conversation;
