@@ -25,3 +25,17 @@ return response.status(200).json("Conversation saved Successfully");
 return response.status(500).json(error.message); 
     }
 }
+
+
+
+export const getConversation=async(request,response)=>{
+try{
+    const senderId=request.body.senderId;
+    const recieverId=request.body.recieverId;
+    
+    const conversation =await Conversation.findOne({members:{$all: [recieverId,senderId] }});
+    return response.status(200).json(conversation);
+}catch(error){
+return response,status(500).json(error.message);
+}
+}
